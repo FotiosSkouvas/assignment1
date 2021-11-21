@@ -31,23 +31,19 @@ with dataset:
         st.write('Below you will find the columns of the dataset:', df.columns)
         st.write('Dataset overview (lines,columns): ', df.shape)
         with data_overview:
-
         #Data Cleaning
         st.write('The dataset contains ', klib.missingval_plot(df), 'missing values')#It shows if there are any missing values)
         df_cleaned = klib.data_cleaning(df)#drops empty and sigle valued columns as well as empty and duplicate rows.
         st.write('The dataset without empty and sigle valued columns as well as empty and duplicate rows:', df_cleaned)
-
         #Remove outliers and numbers which does not make sense
         df=df[df["Torque [Nm]"]!=8.8]
         df=df[df["Torque [Nm]"]!=9.7]
         df=df[df["Torque [Nm]"]!=9.3]
         df=df[df["Torque [Nm]"]!=9.8]
-
         #Change the temperature from Klevin to Celcius
         df["Air temperature [K]"]= df["Air temperature [K]"].apply (lambda x:x-273.15)
         df["Process temperature [K]"]= df["Process temperature [K]"].apply (lambda x:x-273.15)
         df = df.rename(columns={"Air temperature [K]": "Airtem[c]", "Process temperature [K]": "Protem[c]","Product ID":"ID","Machine failure":"Machinefailure"})
-
         #remove duplcates
         st.write('The dataset contains ', df.drop_duplicates(inplace= True), 'duplicates. ', 'The dataset without duplicates is presented above: ')
         st.write(df)
