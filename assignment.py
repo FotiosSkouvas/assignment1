@@ -23,7 +23,8 @@ with header:
 #Data acquisition
 with dataset:
     st.header('Dataset')
-    df = pd.read_csv("https://github.com/FotiosSkouvas/assignment1/blob/main/Data.csv")
+    uploaded_file = st.file_uploader("First of all, choose a CSV file:")
+    df = uploaded_file
     st.write('Below you will find the first 5 rows of the dataset:', df.head())
     st.write('Below you will find the columns of the dataset:', df.columns)
     st.write('Dataset overview (lines,columns): ', df.shape)
