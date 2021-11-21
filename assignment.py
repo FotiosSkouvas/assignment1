@@ -123,6 +123,7 @@ with data_overview:
 
 with data_modeling:
     st.header('Data Modeling')
+    st.markdown('We used the random forest method for the machine failure')
     #Random forest
     clf = RandomForestClassifier()
     print(df.columns)
