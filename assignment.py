@@ -23,7 +23,7 @@ with header:
 #Data acquisition
 with dataset:
     st.header('Dataset')
-    df = pd.read_csv("C:/Users/Fwtis Sk/Desktop/data.csv")
+    df = pd.read_csv("https://github.com/FotiosSkouvas/assignment1/blob/main/Data.csv")
     st.write('Below you will find the first 5 rows of the dataset:', df.head())
     st.write('Below you will find the columns of the dataset:', df.columns)
     st.write('Dataset overview (lines,columns): ', df.shape)
@@ -51,11 +51,9 @@ with data_overview:
     del df["UDI"]
     st.write('The dataset without useless columns:', df)
 
-    df.to_csv("C:/Users/Fwtis Sk/Desktop/MSc Data Science & Engineering/CEI 523 - Επιστήμη Δεδομένων/Assignment 1/Data.csv",index= False)
-
 with data_overview:
     st.header('EDA')
-    f = pd.read_csv("C:/Users/Fwtis Sk/Desktop/MSc Data Science & Engineering/CEI 523 - Επιστήμη Δεδομένων/Assignment 1/Data.csv")
+    f = pd.read(df)
 
     st.markdown('Basic characteristics of the data:')
     st.write(df.describe())
