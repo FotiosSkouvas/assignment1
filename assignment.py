@@ -33,7 +33,7 @@ with dataset:
         with data_overview:
 
         #Data Cleaning
-        st.write('The dataset contains ', klib.missingval_plot(df), 'missing values')#It shows if there are any missing values
+        st.write('The dataset contains ', klib.missingval_plot(df), 'missing values')#It shows if there are any missing values)
         df_cleaned = klib.data_cleaning(df)#drops empty and sigle valued columns as well as empty and duplicate rows.
         st.write('The dataset without empty and sigle valued columns as well as empty and duplicate rows:', df_cleaned)
 
