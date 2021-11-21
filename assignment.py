@@ -55,11 +55,9 @@ with data_overview:
 
 with data_overview:
     st.header('EDA')
-    f = pd.read(df)
-
     st.markdown('Basic characteristics of the data:')
     st.write(df.describe())
-
+    
     #Display all correlations data
     st.set_option('deprecation.showPyplotGlobalUse', False)
     klib.corr_plot(df, annot=False)
