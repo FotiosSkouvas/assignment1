@@ -24,8 +24,9 @@ with header:
 with dataset:
     st.header('Dataset')
     uploaded_file = st.file_uploader("First of all, choose a CSV file:")
-    df = uploaded_file
-    st.write('Below you will find the first 5 rows of the dataset:', df.head(5))
+    df = pd.read_csv(uploaded_file)
+    st.write('Below you will find the first 5 rows of the dataset:')
+    st.write(df.head(5))
     st.write('Below you will find the columns of the dataset:', df.columns)
     st.write('Dataset overview (lines,columns): ', df.shape)
 with data_overview:
